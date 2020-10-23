@@ -30,4 +30,10 @@ public class ValidateISBNTest
 		ValidateISBN validator = new ValidateISBN();
 		validator.checkISBN("123456789");
 	}
+	
+	@Test
+	public void nonNumericISBNsAreNotAllowed() 
+	{
+		fail();
+	}
 }
