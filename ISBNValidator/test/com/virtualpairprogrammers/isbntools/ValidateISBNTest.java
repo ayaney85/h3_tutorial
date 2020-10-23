@@ -18,6 +18,12 @@ public class ValidateISBNTest
 	}
 	
 	@Test
+	public void checkAValid13DigitISBN()
+	{
+		fail();
+	}
+	
+	@Test
 	public void ISBNNumbersEndingInAnXAreValid() 
 	{
 		ValidateISBN validator = new ValidateISBN();
