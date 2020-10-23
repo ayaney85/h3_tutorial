@@ -50,7 +50,7 @@ public class ValidateISBNTest
 		ValidateISBN validator = new ValidateISBN();
 		boolean result = validator.checkISBN("9781853260086");
 		assertFalse(result);
-		fail();
+		
 	}
 	@Test(expected = NumberFormatException.class)
 	public void nineDigitISBNsareNotAllowed() 
