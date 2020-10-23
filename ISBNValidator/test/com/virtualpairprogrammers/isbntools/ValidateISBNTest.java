@@ -8,7 +8,7 @@ public class ValidateISBNTest
 {
 
 	@Test
-	public void checkAValidISBN()
+	public void checkAValid10DigitISBN()
 	{
 		ValidateISBN validator = new ValidateISBN();
 		boolean result = validator.checkISBN("0140449116");
@@ -28,7 +28,7 @@ public class ValidateISBNTest
 	}
 	
 	@Test
-	public void ISBNNumbersEndingInAnXAreValid() 
+	public void TenDigitISBNNumbersEndingInAnXAreValid() 
 	{
 		ValidateISBN validator = new ValidateISBN();
 		boolean result = validator.checkISBN("012000030X");
@@ -36,13 +36,22 @@ public class ValidateISBNTest
 	}	
 	
 	@Test
-	public void checkAnInvalidISBN()
+	public void checkAnInvalid10DigitISBN()
 	{
 		ValidateISBN validator = new ValidateISBN();
 		boolean result = validator.checkISBN("0140449117");
 		assertFalse(result);
 	}
 	
+	
+	@Test
+	public void checkAnInvalid13DigitISBN()
+	{
+		ValidateISBN validator = new ValidateISBN();
+		boolean result = validator.checkISBN("0140449117");
+		assertFalse(result);
+		fail();
+	}
 	@Test(expected = NumberFormatException.class)
 	public void nineDigitISBNsareNotAllowed() 
 	{
